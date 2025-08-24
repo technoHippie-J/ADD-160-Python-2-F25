@@ -62,8 +62,10 @@ book2 = Book(title="Count Zero", author="William Gibson", pages=336)
 
 book3 = Book(title="Mona Lisa Overdrive", author="William Gibson", pages=256)
 
+book4 = Book(title="False Test", author="Anthony Janus", pages=25)
 
 # main program
+
 
 def main():
     book1.display_details()
@@ -71,6 +73,8 @@ def main():
     book2.display_details()
     print()
     book3.display_details()
+    print()
+    book4.display_details()
 
 
 main()
