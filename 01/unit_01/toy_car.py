@@ -51,6 +51,7 @@ class ToyCar:
         self.car_type = car_type
         self.motorized = motorized
 
+    # Methods
     def play(self):
         return "The toy car moves forward."
 
