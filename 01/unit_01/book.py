@@ -48,8 +48,10 @@ class Book:
         self.pages = pages
 
     def display_details(self):
-        print(
-            f"Title: {self.title}, Author: {self.author}, Pages: {self.pages}\nIs long book: {self.is_long_book()}")
+        return (
+            f"Title: {self.title}, Author: {self.author}, Pages: {self.pages}\n"
+            f"Is long book: {self.is_long_book()}"
+        )
 
     def is_long_book(self):
         return self.pages > 100
@@ -68,13 +70,13 @@ book4 = Book(title="False Test", author="Anthony Janus", pages=25)
 
 
 def main():
-    book1.display_details()
+    print(book1.display_details())
     print()
-    book2.display_details()
+    print(book2.display_details())
     print()
-    book3.display_details()
+    print(book3.display_details())
     print()
-    book4.display_details()
+    print(book4.display_details())
 
 
 main()
