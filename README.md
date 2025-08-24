@@ -1,6 +1,6 @@
 # INTERMEDIATE PYTHON - ADD-160-001L (Fall 2025)
 
-*(This README.md file created with help from ChatGPT 5 Thinking)*
+> (This README.md file created with help from ChatGPT 5 Thinking)
 
 This repository contains my coursework for **Intermediate Python (ADD-160-001L)**. It follows the class modules on OOP best practices, GUI development, RESTful APIs, and file processing.
 
