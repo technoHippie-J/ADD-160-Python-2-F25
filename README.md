@@ -47,8 +47,15 @@ This repository contains my coursework for **Intermediate Python (ADD-160-001L)*
 ```text
 /
 ├─ unit1_oop/
-│ ├─ wk01/
+│ ├─ wk01/ 
+│ │ ├─ book/
+│ │ ├─ entry/
+│ │ └─ toy_car/
 │ ├─ wk02/
+│ │ ├─ address_book/
+│ │ ├─ conference_signup/
+│ │ ├─ dog/
+│ │ └─ pep/
 │ ├─ wk03/
 │ ├─ wk04/
 │ ├─ wk05/
