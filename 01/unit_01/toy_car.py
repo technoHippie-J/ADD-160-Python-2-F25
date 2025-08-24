@@ -53,13 +53,13 @@ class ToyCar:
 
     # Methods
     def play(self):
-        return "The toy car moves forward."
+        return f"The {self.car_type} moves forward."
 
     def sound(self):
         return "Vroom."
 
     def no_play(self):
-        return "The toy car stands still... \nNo fun today."
+        return f"The {self.car_type} stands still... \nNo fun today."
 
     def does_it_move(self):
         if self.motorized == True:
