@@ -42,7 +42,7 @@ This repository contains my coursework for **Intermediate Python (ADD-160-001L)*
 
 ## Repo Structure
 
-> This is the intended layout; some folders will be added as we go.
+> This is the intended layout; some folders will be added as we go. Entire structure is present locally, but since GitHub doesn't like empty folders, they'll appear as the semester progresses.
 
 ```text
 /
@@ -66,9 +66,9 @@ This repository contains my coursework for **Intermediate Python (ADD-160-001L)*
 │ ├─ wk14/
 │ ├─ wk15/
 │ └─ wk16/
-├─ tests/ # pytest tests (where applicable)
-├─ notes/ # lecture notes / scratch
-├─ data/ # sample datasets
+├─ tests/     # pytest tests (where applicable)
+├─ notes/     # lecture notes / scratch
+├─ data/      # sample datasets
 ├─ requirements.txt
 └─ README.md
 
@@ -113,9 +113,11 @@ pytest -q
 
 ## Code Style & Quality
 
-PEP 8 for styling and PEP 257 for docstrings.
+> Will be following this to the best of my ability, though some inconsistencies may occur. Some items I'll be learning as I go, such as logging instead of printing. (as stated before, this README.md was generated using the help of ChatGPT 5 Thinking, then edited afterwards, which is why this comment exists, for example.)
 
-Prefer type hints and docstrings:
+- PEP 8 for styling and PEP 257 for docstrings.
+
+- Prefer type hints and docstrings:
 
 ```python
 def area(radius: float) -> float:
@@ -123,11 +125,11 @@ def area(radius: float) -> float:
     ...
 ```
 
-Handle errors explicitly (no silent excepts).
+- Handle errors explicitly (no silent excepts).
 
-Keep modules focused; prefer composition over inheritance when it clarifies design.
+- Keep modules focused; prefer composition over inheritance when it clarifies design.
 
-Use logging (not print) for diagnostic output in larger tasks.
+- Use logging (not print) for diagnostic output in larger tasks.
 
 ---
 
