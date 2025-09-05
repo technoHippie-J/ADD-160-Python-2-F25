@@ -160,144 +160,149 @@ class AddressBook:
             f"Phone Number:      {self.phone}\n"
         )
 
-    # Methods for user input
-    """The methods used for entering user input. Input constraints implemented where applicable"""
+    # ***** The following section was moved to separate file.
+    # ***** Kept and commented out for historical context.
+    # ***** This would be removed if this was a production deliverable.
 
-    def user_entry_first_name(self):
-        complete = False
-        while not complete:
-            print("Please enter the contact's first name: \n")
-            new_first_name = input("Enter: ").strip()
-            try:
-                self.first_name = new_first_name
-                complete = True
-                print(f"First name set to: {self.first_name}")
-            except ValueError as e:
-                print(f"Error: {e}")
-                print("Please try again.\n")
+    # # Methods for user input
 
-    def user_entry_last_name(self):
-        complete = False
-        while not complete:
-            print("Please enter the contact's last name: \n")
-            new_last_name = input("Enter: ").strip()
-            try:
-                self.last_name = new_last_name
-                complete = True
-                print(f"Last name set to: {self.last_name}")
-            except ValueError as e:
-                print(f"Error: {e}")
-                print("Please try again.\n")
+    # """The methods used for entering user input. Input constraints implemented where applicable"""
 
-    def user_entry_birthday(self):
-        complete = False
-        while not complete:
-            print(
-                "Please enter the contact's birthday in the following format:\n\n"
-                "YYYY/MM/DD\n\n"
-            )
-            new_birthday = input("Enter: ").strip()
-            try:
-                self.birthday = new_birthday
-                complete = True
-                print(f"Birthday set to: {self.birthday}")
-            except ValueError as e:
-                print(f"Error: {e}")
-                print("Please try again.\n")
+    # def user_entry_first_name(self):
+    #     complete = False
+    #     while not complete:
+    #         print("Please enter the contact's first name: \n")
+    #         new_first_name = input("Enter: ").strip()
+    #         try:
+    #             self.first_name = new_first_name
+    #             complete = True
+    #             print(f"First name set to: {self.first_name}")
+    #         except ValueError as e:
+    #             print(f"Error: {e}")
+    #             print("Please try again.\n")
 
-    def user_entry_email(self):
-        complete = False
-        while not complete:
-            print("Please enter the contact's email: \n")
-            new_email = input("Enter: ").strip()
-            try:
-                self.email = new_email
-                complete = True
-                print(f"Email set to: {self.email}")
-            except ValueError as e:
-                print(f"Error: {e}")
-                print("Please try again.\n")
+    # def user_entry_last_name(self):
+    #     complete = False
+    #     while not complete:
+    #         print("Please enter the contact's last name: \n")
+    #         new_last_name = input("Enter: ").strip()
+    #         try:
+    #             self.last_name = new_last_name
+    #             complete = True
+    #             print(f"Last name set to: {self.last_name}")
+    #         except ValueError as e:
+    #             print(f"Error: {e}")
+    #             print("Please try again.\n")
 
-    def user_entry_street_address(self):
-        complete = False
-        while not complete:
-            print("Please enter the contact's street address: \n")
-            new_street_address = input("Enter: ").strip()
-            try:
-                self.street_address = new_street_address
-                complete = True
-                print(f"Street address set to: {self.street_address}")
-            except ValueError as e:
-                print(f"Error: {e}")
-                print("Please try again.\n")
+    # def user_entry_birthday(self):
+    #     complete = False
+    #     while not complete:
+    #         print(
+    #             "Please enter the contact's birthday in the following format:\n\n"
+    #             "YYYY/MM/DD\n\n"
+    #         )
+    #         new_birthday = input("Enter: ").strip()
+    #         try:
+    #             self.birthday = new_birthday
+    #             complete = True
+    #             print(f"Birthday set to: {self.birthday}")
+    #         except ValueError as e:
+    #             print(f"Error: {e}")
+    #             print("Please try again.\n")
 
-    def user_entry_city(self):
-        complete = False
-        while not complete:
-            print("Please enter the contact's city: \n")
-            new_city = input("Enter: ").strip()
-            try:
-                self.city = new_city
-                complete = True
-                print(f"City set to: {self.city}")
-            except ValueError as e:
-                print(f"Error: {e}")
-                print("Please try again.\n")
+    # def user_entry_email(self):
+    #     complete = False
+    #     while not complete:
+    #         print("Please enter the contact's email: \n")
+    #         new_email = input("Enter: ").strip()
+    #         try:
+    #             self.email = new_email
+    #             complete = True
+    #             print(f"Email set to: {self.email}")
+    #         except ValueError as e:
+    #             print(f"Error: {e}")
+    #             print("Please try again.\n")
 
-    def user_entry_state(self):
-        complete = False
-        while not complete:
-            print("Please enter the contact's state: \n")
-            new_state = input("Enter: ").strip()
-            try:
-                self.state = new_state
-                complete = True
-                print(f"State set to: {self.state}")
-            except ValueError as e:
-                print(f"Error: {e}")
-                print("Please try again.\n")
+    # def user_entry_street_address(self):
+    #     complete = False
+    #     while not complete:
+    #         print("Please enter the contact's street address: \n")
+    #         new_street_address = input("Enter: ").strip()
+    #         try:
+    #             self.street_address = new_street_address
+    #             complete = True
+    #             print(f"Street address set to: {self.street_address}")
+    #         except ValueError as e:
+    #             print(f"Error: {e}")
+    #             print("Please try again.\n")
 
-    def user_entry_country(self):
-        complete = False
-        while not complete:
-            print("Please enter the contact's three-letter country code: \n")
-            new_country = input("Enter: ").strip()
-            try:
-                self.country = new_country
-                complete = True
-                print(f"Country set to: {self.country}")
-            except ValueError as e:
-                print(f"Error: {e}")
-                print("Please try again.\n")
+    # def user_entry_city(self):
+    #     complete = False
+    #     while not complete:
+    #         print("Please enter the contact's city: \n")
+    #         new_city = input("Enter: ").strip()
+    #         try:
+    #             self.city = new_city
+    #             complete = True
+    #             print(f"City set to: {self.city}")
+    #         except ValueError as e:
+    #             print(f"Error: {e}")
+    #             print("Please try again.\n")
 
-    def user_entry_zip_code(self):
-        complete = False
-        while not complete:
-            print("Please enter the contact's zip code: \n")
-            new_zip_code = input("Enter: ").strip()
-            try:
-                self.zip_code = new_zip_code
-                complete = True
-                print(f"Zip code set to: {self.zip_code}")
-            except ValueError as e:
-                print(f"Error: {e}")
-                print("Please try again.\n")
+    # def user_entry_state(self):
+    #     complete = False
+    #     while not complete:
+    #         print("Please enter the contact's state: \n")
+    #         new_state = input("Enter: ").strip()
+    #         try:
+    #             self.state = new_state
+    #             complete = True
+    #             print(f"State set to: {self.state}")
+    #         except ValueError as e:
+    #             print(f"Error: {e}")
+    #             print("Please try again.\n")
 
-    def user_entry_phone(self):
-        complete = False
-        while not complete:
-            print(
-                "Please enter the contact's phone number in the following format, including dashes:\n\n"
-                "xxx-xxx-xxxx\n\n"
-            )
-            new_phone = input("Enter: ").strip()
-            try:
-                self.phone = new_phone
-                complete = True
-                print(f"Phone number set to: {self.phone}")
-            except ValueError as e:
-                print(f"Error: {e}")
-                print("Please try again.\n")
+    # def user_entry_country(self):
+    #     complete = False
+    #     while not complete:
+    #         print("Please enter the contact's three-letter country code: \n")
+    #         new_country = input("Enter: ").strip()
+    #         try:
+    #             self.country = new_country
+    #             complete = True
+    #             print(f"Country set to: {self.country}")
+    #         except ValueError as e:
+    #             print(f"Error: {e}")
+    #             print("Please try again.\n")
+
+    # def user_entry_zip_code(self):
+    #     complete = False
+    #     while not complete:
+    #         print("Please enter the contact's zip code: \n")
+    #         new_zip_code = input("Enter: ").strip()
+    #         try:
+    #             self.zip_code = new_zip_code
+    #             complete = True
+    #             print(f"Zip code set to: {self.zip_code}")
+    #         except ValueError as e:
+    #             print(f"Error: {e}")
+    #             print("Please try again.\n")
+
+    # def user_entry_phone(self):
+    #     complete = False
+    #     while not complete:
+    #         print(
+    #             "Please enter the contact's phone number in the following format, including dashes:\n\n"
+    #             "xxx-xxx-xxxx\n\n"
+    #         )
+    #         new_phone = input("Enter: ").strip()
+    #         try:
+    #             self.phone = new_phone
+    #             complete = True
+    #             print(f"Phone number set to: {self.phone}")
+    #         except ValueError as e:
+    #             print(f"Error: {e}")
+    #             print("Please try again.\n")
 
 # --- Getters ---
     """[Getters] for the AddressBook [Class]"""
@@ -734,21 +739,22 @@ class AddressBook:
             self._phone = None
 
 
-# --- Instantiated Objects ---
-"""Instanced [Objects] of the AddressBook [Class]"""
+# # --- Instantiated Objects ---
+# ***moved to __main__.py***
+# """Instanced [Objects] of the AddressBook [Class]"""
 
 
-entry_01 = AddressBook(first_name="Rick", last_name="Deckard", birthday="1979/01/08",
-                       email="bladerunner.rd@lapd.gov", street_address="Apt #9732", city="Los Angeles", state="CA", country="USA", zip_code="90009", phone="213-082-1119")
+# entry_01 = AddressBook(first_name="Rick", last_name="Deckard", birthday="1979/01/08",
+#                        email="bladerunner.rd@lapd.gov", street_address="Apt #9732", city="Los Angeles", state="CA", country="USA", zip_code="90009", phone="213-082-1119")
 
-entry_02 = AddressBook(first_name="Cassandra", last_name="Anderson", birthday="1987/09/07",
-                       email="psi.anderson@mc1-justice.gov", street_address="Peach Trees Apt #0907", city="New York", state="NY", country="USA", zip_code="10001", phone="212-907-1212")
+# entry_02 = AddressBook(first_name="Cassandra", last_name="Anderson", birthday="1987/09/07",
+#                        email="psi.anderson@mc1-justice.gov", street_address="Peach Trees Apt #0907", city="New York", state="NY", country="USA", zip_code="10001", phone="212-907-1212")
 
-entry_03 = AddressBook(first_name="Max", last_name="Rockatansky", birthday="1979/04/12",
-                       email="mfp.max@mfp.gov.au", street_address="MFP Highway Patrol #44", city="Melbourne", state="Victoria", country="AUS", zip_code="03000", phone="613-412-1979")
+# entry_03 = AddressBook(first_name="Max", last_name="Rockatansky", birthday="1979/04/12",
+#                        email="mfp.max@mfp.gov.au", street_address="MFP Highway Patrol #44", city="Melbourne", state="Victoria", country="AUS", zip_code="03000", phone="613-412-1979")
 
-entry_04 = AddressBook(first_name="Shaun", last_name="Riley", birthday="1978/09/24",
-                       email="shaun.riley@foree.co.uk", street_address="Flat #2B, 42 Nelson Road", city="London", state="N/A", country="ENG", zip_code="NW5 2QH", phone="020-924-2004")
+# entry_04 = AddressBook(first_name="Shaun", last_name="Riley", birthday="1978/09/24",
+#                        email="shaun.riley@foree.co.uk", street_address="Flat #2B, 42 Nelson Road", city="London", state="N/A", country="ENG", zip_code="NW5 2QH", phone="020-924-2004")
 
 
 """
