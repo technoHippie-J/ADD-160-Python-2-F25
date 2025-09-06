@@ -139,6 +139,7 @@ def menu_loop():
 
         if selection == 1:
             print("This selection is not implemented yet."+"\n")
+            time.sleep(2)
             if selection != None:
                 selection = None
         elif selection == 2:
