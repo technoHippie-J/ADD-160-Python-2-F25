@@ -10,7 +10,7 @@ def user_entry_first_name():
         try:
             first_name = new_first_name
             complete = True
-            print(f"First name set to: {first_name}")
+            print(f"First name set to: {first_name}\n")
             return first_name
         except ValueError as e:
             print(f"Error: {e}")
@@ -25,7 +25,7 @@ def user_entry_last_name():
         try:
             last_name = new_last_name
             complete = True
-            print(f"Last name set to: {last_name}")
+            print(f"Last name set to: {last_name}\n")
             return last_name
         except ValueError as e:
             print(f"Error: {e}")
@@ -37,13 +37,13 @@ def user_entry_birthday():
     while not complete:
         print(
             "Please enter the contact's birthday in the following format:\n\n"
-            "YYYY/MM/DD\n\n"
+            "YYYY/MM/DD\n"
         )
         new_birthday = input("Enter: ").strip()
         try:
             birthday = new_birthday
             complete = True
-            print(f"Birthday set to: {birthday}")
+            print(f"Birthday set to: {birthday}\n")
             return birthday
         except ValueError as e:
             print(f"Error: {e}")
@@ -58,7 +58,7 @@ def user_entry_email():
         try:
             email = new_email
             complete = True
-            print(f"Email set to: {email}")
+            print(f"Email set to: {email}\n")
             return email
         except ValueError as e:
             print(f"Error: {e}")
@@ -73,7 +73,7 @@ def user_entry_street_address():
         try:
             street_address = new_street_address
             complete = True
-            print(f"Street address set to: {street_address}")
+            print(f"Street address set to: {street_address}\n")
             return street_address
         except ValueError as e:
             print(f"Error: {e}")
@@ -88,7 +88,7 @@ def user_entry_city():
         try:
             city = new_city
             complete = True
-            print(f"City set to: {city}")
+            print(f"City set to: {city}\n")
             return city
         except ValueError as e:
             print(f"Error: {e}")
@@ -103,7 +103,7 @@ def user_entry_state():
         try:
             state = new_state
             complete = True
-            print(f"State set to: {state}")
+            print(f"State set to: {state}\n")
             return state
         except ValueError as e:
             print(f"Error: {e}")
@@ -118,7 +118,7 @@ def user_entry_country():
         try:
             country = new_country
             complete = True
-            print(f"Country set to: {country}")
+            print(f"Country set to: {country}\n")
             return country
         except ValueError as e:
             print(f"Error: {e}")
@@ -133,7 +133,7 @@ def user_entry_zip_code():
         try:
             zip_code = new_zip_code
             complete = True
-            print(f"Zip code set to: {zip_code}")
+            print(f"Zip code set to: {zip_code}\n")
             return zip_code
         except ValueError as e:
             print(f"Error: {e}")
@@ -151,7 +151,7 @@ def user_entry_phone():
         try:
             phone = new_phone
             complete = True
-            print(f"Phone number set to: {phone}")
+            print(f"Phone number set to: {phone}\n")
             return phone
         except ValueError as e:
             print(f"Error: {e}")

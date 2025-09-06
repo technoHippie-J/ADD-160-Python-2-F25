@@ -119,18 +119,19 @@ def menu_loop():
     while active == True:
         selection = None
         print(
-            ("\n" * 3) + "Select Option:" + ("\n" * 2) +
+            ("\n" * 1) + "Select Option:" + ("\n" * 2) +
             f"1) Create User               (Enter [1])" + "\n"
             f"2) Create Contact            (Enter [2])" + "\n"
-            f"3) Run Class Assignment      (Enter [3])" + "\n\n"
+            f"3) Run Class Assignment      (Enter [3])" + "\n"
+            f"4) Quit                      (Enter [4])" + "\n"
         )
 
         try:
             selection = int(input("Choice: "))
-            if selection in (1, 2, 3):
-                print(f"Thank you for entering {selection}.")
+            if selection in (1, 2, 3, 4):
+                print(f"Thank you for entering {selection}.\n")
             else:
-                raise ValueError("Entry must be [1] or [2]")
+                raise ValueError("Entry must be [1], [2], [3], or [4]")
         except ValueError as e:
             print(f"Invalid Entry: {e}")
         except Exception as e:
@@ -156,56 +157,66 @@ def menu_loop():
             except Exception as e:
                 print(f"Encountered error: \n{e}")
         elif selection == 3:
+            time.sleep(0.5)
             try:
-                print(
+                first = (
                     f"1. Create and print four contact entries:\n"
                     f"   -(Two-fer: Print 4 instantiations and)-\n"
                     f"   -(Magic Method Implementation of __str__)-\n"
-                    f"   ========================================="
-                    ("\n" * 2) +
-                    f"{entry_01}" +
-                    ("\n" * 3) +
-                    f"{entry_02}" +
-                    ("\n" * 3) +
-                    f"{entry_03}" +
-                    ("\n" * 3) +
-                    f"{entry_04}" +
-                    ("\n" * 2)
+                    f"   =========================================\n\n"
+                    f"{entry_01}\n\n"
+                    f"{entry_02}\n\n"
+                    f"{entry_03}\n\n"
+                    f"{entry_04}\n\n"
                 )
+                for line in first.splitlines():
+                    print(line)
+                    time.sleep(0.25)
             except Exception as e:
                 print(f"An error occurred: {e}")
+            time.sleep(0.5)
             try:
-                print(
-                    f"2. Compare two entries to see if they are the same contact:\n"
+                second = (
+                    f"\n2. Compare two entries to see if they are the same contact:\n"
                     f"   -(Magic Method Implementation of __eq__)-\n"
-                    f"   ========================================================"
-                    ("\n" * 2) +
+                    f"   ========================================================\n\n"
                     # Formatted to show intentional magic method usage
                     # Could also be print(entry_01 == entry_03)
                     # Magic method provides type validation
-                    (Contact.__eq__(entry_01, entry_03))
+                    f"Is {entry_01.first_name} {entry_01.last_name} the same person as {entry_03.first_name} {entry_03.last_name}\n\n"
+                    f"{Contact.__eq__(entry_01, entry_03)}"
                 )
+                for line in second.splitlines():
+                    print(line)
+                    time.sleep(0.25)
             except Exception as e:
                 print(f"An error occurred: {e}")
+            time.sleep(0.5)
             try:
                 print(
-                    f"3. Contact sorting algorithm:\n"
+                    f"\n3. Contact sorting algorithm:\n"
                     f"   -(Magic Method Implementation of __lt__)-\n"
-                    f"   -(Magic method provides type validation)-"
-                    f"   ========================================="
-                    ("\n" * 2)
+                    f"   -(Magic method provides type validation)-\n"
+                    f"   =========================================\n\n"
                 )
                 # Sort using AddressBook.__lt__ (using _sort_key)
                 Contact._instances.sort()
                 # Print results
                 for entry in Contact._instances:
-                    print(entry)
+                    show = str(entry)
+                    for line in show.splitlines():
+                        print(line)
+                        time.sleep(0.25)
                     print("\n" * 2)
 
             except Exception as e:
                 print(f"An error occurred: {e}")
 
                 # Create Dictionary for contact_data
+        if selection == 4:
+            print("\nThank you, goodbye.")
+            time.sleep(2)
+            exit()
 
 
 def create_contact():
@@ -229,13 +240,13 @@ def create_contact():
         new_contact = Contact(**contact_data)
 
         # Verify instantiation and display
-        print("\n" + ("=" * 50))
+        print("\n\n" + ("=" * 50))
         print(
             f"Contact successfully created.\n"
             f"Contact data entered as follows:\n\n"
             f"{new_contact}"
         )
-        print("\n" + "="*50)
+        print("="*50)
 
     except ValueError as e:
         print(f"Error creating contact: {e}")
@@ -256,6 +267,7 @@ def main():
     # Startup process to give user sense of agency and control over program
 
     startup = (
+        ("\n" * 3) +
         "Starting Address Book Entry...\n"
         ".\n"
         ".\n"
@@ -272,7 +284,7 @@ def main():
 
     go = False
     while go == False:
-        input("Please press any key to continue...")
+        input("Please press enter to continue...")
         print("\n\n\n")
         go = True
 

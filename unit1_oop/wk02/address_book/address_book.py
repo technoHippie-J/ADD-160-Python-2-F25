@@ -131,7 +131,7 @@ class AddressBook:
 
     def _sort_key(self):
         return (
-            (self.lastname or "").casefold(),
+            (self.last_name or "").casefold(),
             (self.first_name or "").casefold(),
             (self.birthday or ""),
             (self.email or "").casefold(),
