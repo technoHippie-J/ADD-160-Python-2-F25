@@ -111,6 +111,7 @@ This also changed the way I view class attributes, as the attribute itself can c
 
 class AddressBook:
     """AddressBook [Class] for address book entries"""
+    _instances = []
 
     def __init__(self, first_name, last_name, birthday=None, email=None, street_address=None, city=None, state=None, country=None, zip_code=None, phone=None):
         self.first_name = first_name
@@ -123,15 +124,19 @@ class AddressBook:
         self.country = country
         self.zip_code = zip_code
         self.phone = phone
+        AddressBook._instances.append(self)
 
     # --- Methods ---
     """[Methods] for the AddressBook [Class]"""
 
     def _sort_key(self):
-        items = [self.last_name.casefold(), self.first_name.casefold()]
-        if self.birthday:
-            items.append(self.birthday)
-        return tuple(items)
+        return (
+            (self.lastname or "").casefold(),
+            (self.first_name or "").casefold(),
+            (self.birthday or ""),
+            (self.email or "").casefold(),
+            (self.phone or "")
+        )
 
     def __eq__(self, other):
         """[Method] comparing the _sort_key of two entries to determine if they are the same contact"""
