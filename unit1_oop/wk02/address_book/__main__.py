@@ -142,8 +142,7 @@ def menu_loop():
                 selection = None
         elif selection == 2:
             try:
-                success = create_contact()
-                print(f"Starting contact creation..." + success)
+                print(f"Starting contact creation...")
                 startup = (
                     ".\n"
                     ".\n"
@@ -153,6 +152,7 @@ def menu_loop():
                 for line in startup.splitlines():
                     print(line)
                     time.sleep(0.25)
+                create_contact()
             except Exception as e:
                 print(f"Encountered error: \n{e}")
         elif selection == 3:
@@ -244,6 +244,8 @@ def create_contact():
         print(f"Unexpected error: {e}")
         return None
 
+    return new_contact
+
     # TODO: Verify if user wants to add the contact to the addrbk_user**.json file, located in the user folder. Do some research to figure out how to do this properly. I know that .json is useful for structured data, but haven't looked into specifics yet. On the list, depending on time.
 
 # --- Main Program Loop ---
@@ -273,6 +275,8 @@ def main():
         input("Please press any key to continue...")
         print("\n\n\n")
         go = True
+
+    menu_loop()
 
 
 if __name__ == "__main__":
