@@ -115,7 +115,31 @@ This also changed the way I view class attributes, as the attribute itself can c
 
 class AddressBook:
     """AddressBook [Class] for address book entries"""
+    # Keep track of created instances
     _instances = []
+    """
+    Class to represent an address book entry.
+
+    Attributes:
+    -first_name (req)
+    -last_name (req)
+    -birthday
+    -email (this *or* phone req)
+    -street_address
+    -city
+    -state
+    -country
+    -zip_code
+    -phone (this *or* email req)
+
+    Methods:
+    -_sort_key helper method returns last_name,first_name,birthday,email,phone for sorting and comp
+    -__eq__,__lt__,__str__ magic methods for comp,sort,clean print
+    -Getter/Setter/Deleter implemented using @property
+        -these methods exist for each of the above attributes
+        -Setter methods include validation
+    -UI methods in module=(addrnk_user_input.py)
+    """
 
     def __init__(self, first_name, last_name, birthday=None, email=None, street_address=None, city=None, state=None, country=None, zip_code=None, phone=None):
         self.first_name = first_name
