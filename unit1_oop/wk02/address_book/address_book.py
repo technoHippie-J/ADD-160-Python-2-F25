@@ -408,7 +408,7 @@ class AddressBook:
         self._last_name = new_last_name
 
     @birthday.setter
-    # FIXME - validation does not trigger until the end of instantiation.
+    # FIXME (FIXED) - validation does not trigger until the end of instantiation.
     # I was able to enter forbidden characters, but did not receive an error until going through each user input.
     # The error output is: "Error creating contact: Birthday must be in YYYY/MM/DD format (10 characters)."
     # This indicates that validation did raise exceptions at the birthday field (first with char reqs), but continued the process.
@@ -631,9 +631,13 @@ class AddressBook:
         # Check if blank or None, then return
         if not self.email and (new_phone is None or new_phone == ""):
             '''
-                FIXME: This currently breaks if the user does not enter a phone number after not entering an email, as no while loop to return to input has been implemented
+                FIXME: This currently breaks if the user does not enter a phone number after not 
+                entering an email, as no while loop to return to input has been implemented
                 This can be fixed by setting a flag in the input function, then writing a
-                While loop, recursively calling itself until the user has entered a phone number. Another implementation could be providing an option to enter a value of 'None'
+                While loop, recursively calling itself until the user has entered a phone number. 
+                Another implementation could be providing an option to enter a value of 'None'
+                NOT AN ISSUE in currently implementation, but if ever called outside of native
+                logic, it could raise.
             '''
             raise ValueError(
                 f"Phone and email cannot both be empty.\n"

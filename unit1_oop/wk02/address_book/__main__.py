@@ -118,18 +118,21 @@ def menu_loop():
     active = True
     while active == True:
         selection = None
-        print(
+        menu = (
             ("\n" * 1) + "Select Option:" + ("\n" * 2) +
             f"1) Create User               (Enter [1])" + "\n"
             f"2) Create Contact            (Enter [2])" + "\n"
             f"3) Run Class Assignment      (Enter [3])" + "\n"
-            f"4) Quit                      (Enter [4])" + "\n"
+            f"4) Quit                      (Enter [4])" + "\n\n"
         )
+        for line in menu.splitlines():
+            print(line)
+            time.sleep(0.1)
 
         try:
             selection = int(input("Choice: "))
             if selection in (1, 2, 3, 4):
-                print(f"Thank you for entering {selection}.\n")
+                print(f"\nThank you for entering {selection}.\n")
             else:
                 raise ValueError("Entry must be [1], [2], [3], or [4]")
         except ValueError as e:
@@ -138,8 +141,20 @@ def menu_loop():
             print(f"Unknown error occurred: {e}")
 
         if selection == 1:
-            print("This selection is not implemented yet."+"\n")
-            time.sleep(2)
+            not_imp = ("This selection is not implemented yet."+"\n")
+            for line in not_imp.splitlines():
+                print(line)
+                time.sleep(0.1)
+            not_imp_dot = (
+                ".\n"
+                ".\n"
+                ".\n"
+                ".\n"
+            )
+            for line in not_imp_dot.splitlines():
+                print(line)
+                time.sleep(0.5)
+            time.sleep(1)
             if selection != None:
                 selection = None
         elif selection == 2:
@@ -150,6 +165,7 @@ def menu_loop():
                     ".\n"
                     ".\n"
                     ".\n"
+                    "\n"
                 )
                 for line in startup.splitlines():
                     print(line)
@@ -165,6 +181,11 @@ def menu_loop():
                     f"   -(Two-fer: Print 4 instantiations and)-\n"
                     f"   -(Magic Method Implementation of __str__)-\n"
                     f"   =========================================\n\n"
+                    "The Code:\n"
+                    "              f'{entry_01}\\n\\n'\n"
+                    "              f'{entry_02}\\n\\n'\n"
+                    "              f'{entry_03}\\n\\n'\n"
+                    "              f'{entry_04}\\n\\n'\n\n"
                     f"{entry_01}\n\n"
                     f"{entry_02}\n\n"
                     f"{entry_03}\n\n"
@@ -175,31 +196,50 @@ def menu_loop():
                     time.sleep(0.1)
             except Exception as e:
                 print(f"An error occurred: {e}")
-            time.sleep(0.5)
+            time.sleep(2)
+            input("Hit enter to continue: ")
             try:
                 second = (
                     f"\n2. Compare two entries to see if they are the same contact:\n"
                     f"   -(Magic Method Implementation of __eq__)-\n"
                     f"   ========================================================\n\n"
+                    "The Code:\n"
+                    "         f'Is {entry_01.first_name} {entry_01.last_name} the same\n"
+                    "         person {entry_03.first_name} {entry_03.last_name}\\n\\n'\n"
+                    "         f'{Contact.__eq__(entry_01, entry_03)}\n\n"
                     # Formatted to show intentional magic method usage
                     # Could also be print(entry_01 == entry_03)
                     # Magic method provides type validation
                     f"Is {entry_01.first_name} {entry_01.last_name} the same person as {entry_03.first_name} {entry_03.last_name}\n\n"
-                    f"{Contact.__eq__(entry_01, entry_03)}"
+                    f"{Contact.__eq__(entry_01, entry_03)}\n"
                 )
                 for line in second.splitlines():
                     print(line)
-                    time.sleep(0.25)
+                    time.sleep(0.1)
             except Exception as e:
                 print(f"An error occurred: {e}")
-            time.sleep(0.5)
+            time.sleep(2)
+            input("\n\nHit enter to continue: ")
             try:
-                print(
+                third = (
                     f"\n3. Contact sorting algorithm:\n"
                     f"   -(Magic Method Implementation of __lt__)-\n"
                     f"   -(Magic method provides type validation)-\n"
                     f"   =========================================\n\n"
+                    "The Code:\n"
+                    "     # Sort using AddressBook.__lt__ (using _sort_key)\n"
+                    "     Contact._instances.sort()\n"
+                    "     # Print results\n"
+                    "     for entry in Contact._instances:\n"
+                    "         show = str(entry)\n"
+                    "         for line in show.splitlines():\n"
+                    "            print(line)\n"
+                    "            time.sleep(0.1)\n"
+                    "         print('\\n')\n\n"
                 )
+                for line in third.splitlines():
+                    print(line)
+                    time.sleep(0.1)
                 # Sort using AddressBook.__lt__ (using _sort_key)
                 Contact._instances.sort()
                 # Print results
@@ -207,13 +247,15 @@ def menu_loop():
                     show = str(entry)
                     for line in show.splitlines():
                         print(line)
-                        time.sleep(0.25)
-                    print("\n" * 2)
+                        time.sleep(0.1)
+                    print("\n")
 
             except Exception as e:
                 print(f"An error occurred: {e}")
+            time.sleep(2)
+            input("Hit enter to continue: \n")
 
-                # Create Dictionary for contact_data
+            # Create Dictionary for contact_data
         if selection == 4:
             print("\nThank you, goodbye.")
             time.sleep(2)
@@ -224,19 +266,60 @@ def create_contact():
     # TODO: this just creates an instance, but does not save it to a file, or generate iterative variable names.
     # One or the other should be implemented so the contact can then be recalled later.
 
+    required_fields = [
+        ("first_name", input_module.user_entry_first_name),
+        ("last_name", input_module.user_entry_last_name),
+        ("email", input_module.user_entry_email),
+        ("phone", input_module.user_entry_phone)
+    ]
+
     while True:
-        first = input_module.user_entry_first_name()
-        last = input_module.user_entry_last_name()
-        email = input_module.user_entry_email()
-        phone = input_module.user_entry_phone()
+        contact_data = {}
+        for attr, input_fn in required_fields:
+            while True:
+                try:
+                    info = input_fn()
+                    contact_data[attr] = info
+                    break
+                except ValueError as e:
+                    print(
+                        f"Invalid entry: {e}\n"
+                        f"Please re-enter the name fields.\n\n"
+                    )
+
+        while not (contact_data.get("email") and contact_data["email"].strip()) and not contact_data.get("phone") and contact_data["phone"].strip():
+            print(
+                "Either an email or a phone number is required.\n"
+                "Please enter at least one.\n\n"
+            )
+            try:
+                val = input_module.user_entry_email()
+                if val and val.strip():
+                    contact_data["email"] = val
+                    break
+            except ValueError as e:
+                print(f"Invalid email: {e}\n")
+            try:
+                val = input_module.user_entry_phone()
+                if val and val.strip():
+                    contact_data["phone"] = val
+                    break
+            except ValueError as e:
+                print(f"Invalid phone: {e}")
+            print("No valid contact method entered. Please try again...\n\n")
+
         try:
-            new_contact = Contact(
-                first_name=first, last_name=last, email=email, phone=phone)
+            new_contact = Contact(**contact_data)
             break
         except ValueError as e:
             print(
-                f"Invalid name: {e}\n"
-                f"Please re-enter the name fields.\n\n"
+                f"Error creating contact: {e}\n"
+                "Please try again...\n\n"
+            )
+        except Exception as e:
+            print(
+                f"Unexpected error creating contact: {e}\n"
+                "Please try again... \n\n"
             )
 
     optional_fields = [
@@ -255,11 +338,15 @@ def create_contact():
                 setattr(new_contact, attr, entry)
                 break
             except ValueError as e:
-                print(f"Invalid {attr}: Please try again.\n")
-                return None
+                print(
+                    f"Invalid {attr}: Please try again.\n"
+                    f"Please try again.\n\n"
+                )
             except Exception as e:
-                print(f"Unexpected error: {e}")
-                return None
+                print(
+                    f"Unexpected error: {e}"
+                    f"Please try again.\n\n"
+                )
 
     print("\n\n" + ("=" * 50))
     print(
@@ -281,8 +368,11 @@ def main():
     # Startup process to give user sense of agency and control over program
 
     startup = (
-        ("\n" * 3) +
+        ("\n" * 2) +
         "Starting Address Book Entry...\n"
+        ".\n"
+        ".\n"
+        ".\n"
         ".\n"
         ".\n"
         ".\n"

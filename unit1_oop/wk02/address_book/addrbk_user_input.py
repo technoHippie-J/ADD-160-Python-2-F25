@@ -7,14 +7,10 @@ def user_entry_first_name():
     while not complete:
         print("*- Please enter the contact's first name: \n")
         new_first_name = input("Enter: ").strip()
-        try:
-            first_name = new_first_name
-            complete = True
-            print(f"First name set to: {first_name}\n")
-            return first_name
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("Please try again.\n")
+        first_name = new_first_name
+        complete = True
+        print(f"First name set to: {first_name}\n")
+        return first_name
 
 
 def user_entry_last_name():
@@ -22,14 +18,10 @@ def user_entry_last_name():
     while not complete:
         print("*- Please enter the contact's last name: \n")
         new_last_name = input("Enter: ").strip()
-        try:
-            last_name = new_last_name
-            complete = True
-            print(f"Last name set to: {last_name}\n")
-            return last_name
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("Please try again.\n")
+        last_name = new_last_name
+        complete = True
+        print(f"Last name set to: {last_name}\n")
+        return last_name
 
 
 def user_entry_birthday():
@@ -40,14 +32,10 @@ def user_entry_birthday():
             "          YYYY/MM/DD\n"
         )
         new_birthday = input("Enter: ").strip()
-        try:
-            birthday = new_birthday
-            complete = True
-            print(f"Birthday set to: {birthday}\n")
-            return birthday
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("Please try again.\n")
+        birthday = new_birthday
+        complete = True
+        print(f"Birthday set to: {birthday}\n")
+        return birthday
 
 
 def user_entry_email():
@@ -55,14 +43,10 @@ def user_entry_email():
     while not complete:
         print("*- Please enter the contact's email: \n")
         new_email = input("Enter: ").strip()
-        try:
-            email = new_email
-            complete = True
-            print(f"Email set to: {email}\n")
-            return email
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("Please try again.\n")
+        email = new_email
+        complete = True
+        print(f"Email set to: {email}\n")
+        return email
 
 
 def user_entry_street_address():
@@ -70,14 +54,10 @@ def user_entry_street_address():
     while not complete:
         print("*- Please enter the contact's street address: \n")
         new_street_address = input("Enter: ").strip()
-        try:
-            street_address = new_street_address
-            complete = True
-            print(f"Street address set to: {street_address}\n")
-            return street_address
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("Please try again.\n")
+        street_address = new_street_address
+        complete = True
+        print(f"Street address set to: {street_address}\n")
+        return street_address
 
 
 def user_entry_city():
@@ -85,14 +65,10 @@ def user_entry_city():
     while not complete:
         print("*- Please enter the contact's city: \n")
         new_city = input("Enter: ").strip()
-        try:
-            city = new_city
-            complete = True
-            print(f"City set to: {city}\n")
-            return city
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("Please try again.\n")
+        city = new_city
+        complete = True
+        print(f"City set to: {city}\n")
+        return city
 
 
 def user_entry_state():
@@ -100,14 +76,10 @@ def user_entry_state():
     while not complete:
         print("*- Please enter the contact's state: \n")
         new_state = input("Enter: ").strip()
-        try:
-            state = new_state
-            complete = True
-            print(f"State set to: {state}\n")
-            return state
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("Please try again.\n")
+        state = new_state
+        complete = True
+        print(f"State set to: {state}\n")
+        return state
 
 
 def user_entry_country():
@@ -115,14 +87,10 @@ def user_entry_country():
     while not complete:
         print("*- Please enter the contact's three-letter country code: \n")
         new_country = input("Enter: ").strip()
-        try:
-            country = new_country
-            complete = True
-            print(f"Country set to: {country}\n")
-            return country
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("Please try again.\n")
+        country = new_country
+        complete = True
+        print(f"Country set to: {country}\n")
+        return country
 
 
 def user_entry_zip_code():
@@ -130,14 +98,10 @@ def user_entry_zip_code():
     while not complete:
         print("*- Please enter the contact's zip code: \n")
         new_zip_code = input("Enter: ").strip()
-        try:
-            zip_code = new_zip_code
-            complete = True
-            print(f"Zip code set to: {zip_code}\n")
-            return zip_code
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("Please try again.\n")
+        zip_code = new_zip_code
+        complete = True
+        print(f"Zip code set to: {zip_code}\n")
+        return zip_code
 
 
 def user_entry_phone():
@@ -148,11 +112,7 @@ def user_entry_phone():
             "          xxx-xxx-xxxx\n"
         )
         new_phone = input("Enter: ").strip()
-        try:
-            phone = new_phone
-            complete = True
-            print(f"Phone number set to: {phone}\n")
-            return phone
-        except ValueError as e:
-            print(f"Error: {e}")
-            print("Please try again.\n")
+        phone = new_phone
+        complete = True
+        print(f"Phone number set to: {phone}\n")
+        return phone
