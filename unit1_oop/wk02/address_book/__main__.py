@@ -172,7 +172,7 @@ def menu_loop():
                 )
                 for line in first.splitlines():
                     print(line)
-                    time.sleep(0.25)
+                    time.sleep(0.1)
             except Exception as e:
                 print(f"An error occurred: {e}")
             time.sleep(0.5)
@@ -303,6 +303,8 @@ def main():
         go = True
 
     menu_loop()
+
+# Run program
 
 
 if __name__ == "__main__":

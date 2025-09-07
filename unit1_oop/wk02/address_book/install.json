@@ -1,0 +1,13 @@
+{
+  "type": "placeholder file",
+  "name": "address_book",
+  "version": "1.0.0",
+  "description": "A simple address book application",
+  "main": "app.py",
+  "scripts": {
+    "start": "python app.py"
+  },
+  "dependencies": {
+    "flask": "^2.0.1"
+  }
+}
