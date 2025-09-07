@@ -5,7 +5,7 @@
 def user_entry_first_name():
     complete = False
     while not complete:
-        print("Please enter the contact's first name: \n")
+        print("*- Please enter the contact's first name: \n")
         new_first_name = input("Enter: ").strip()
         try:
             first_name = new_first_name
@@ -20,7 +20,7 @@ def user_entry_first_name():
 def user_entry_last_name():
     complete = False
     while not complete:
-        print("Please enter the contact's last name: \n")
+        print("*- Please enter the contact's last name: \n")
         new_last_name = input("Enter: ").strip()
         try:
             last_name = new_last_name
@@ -36,8 +36,8 @@ def user_entry_birthday():
     complete = False
     while not complete:
         print(
-            "Please enter the contact's birthday in the following format:\n\n"
-            "YYYY/MM/DD\n"
+            "*- Please enter the contact's birthday in the following format:\n\n"
+            "          YYYY/MM/DD\n"
         )
         new_birthday = input("Enter: ").strip()
         try:
@@ -53,7 +53,7 @@ def user_entry_birthday():
 def user_entry_email():
     complete = False
     while not complete:
-        print("Please enter the contact's email: \n")
+        print("*- Please enter the contact's email: \n")
         new_email = input("Enter: ").strip()
         try:
             email = new_email
@@ -68,7 +68,7 @@ def user_entry_email():
 def user_entry_street_address():
     complete = False
     while not complete:
-        print("Please enter the contact's street address: \n")
+        print("*- Please enter the contact's street address: \n")
         new_street_address = input("Enter: ").strip()
         try:
             street_address = new_street_address
@@ -83,7 +83,7 @@ def user_entry_street_address():
 def user_entry_city():
     complete = False
     while not complete:
-        print("Please enter the contact's city: \n")
+        print("*- Please enter the contact's city: \n")
         new_city = input("Enter: ").strip()
         try:
             city = new_city
@@ -98,7 +98,7 @@ def user_entry_city():
 def user_entry_state():
     complete = False
     while not complete:
-        print("Please enter the contact's state: \n")
+        print("*- Please enter the contact's state: \n")
         new_state = input("Enter: ").strip()
         try:
             state = new_state
@@ -113,7 +113,7 @@ def user_entry_state():
 def user_entry_country():
     complete = False
     while not complete:
-        print("Please enter the contact's three-letter country code: \n")
+        print("*- Please enter the contact's three-letter country code: \n")
         new_country = input("Enter: ").strip()
         try:
             country = new_country
@@ -128,7 +128,7 @@ def user_entry_country():
 def user_entry_zip_code():
     complete = False
     while not complete:
-        print("Please enter the contact's zip code: \n")
+        print("*- Please enter the contact's zip code: \n")
         new_zip_code = input("Enter: ").strip()
         try:
             zip_code = new_zip_code
@@ -144,8 +144,8 @@ def user_entry_phone():
     complete = False
     while not complete:
         print(
-            "Please enter the contact's phone number in the following format, including dashes:\n\n"
-            "xxx-xxx-xxxx\n\n"
+            "*- Please enter the contact's phone number in the following format, including dashes:\n\n"
+            "          xxx-xxx-xxxx\n"
         )
         new_phone = input("Enter: ").strip()
         try:

@@ -408,6 +408,11 @@ class AddressBook:
         self._last_name = new_last_name
 
     @birthday.setter
+    # FIXME - validation does not trigger until the end of instantiation.
+    # I was able to enter forbidden characters, but did not receive an error until going through each user input.
+    # The error output is: "Error creating contact: Birthday must be in YYYY/MM/DD format (10 characters)."
+    # This indicates that validation did raise exceptions at the birthday field (first with char reqs), but continued the process.
+    # The process has been tested to work properly with correct inputs.
     def birthday(self, new_birthday):
         """
         [Setter] for the birthday [Attribute] with validation. Creates year, month, and day lists to check their positions in the string.

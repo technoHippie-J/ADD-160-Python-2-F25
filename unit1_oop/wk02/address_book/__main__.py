@@ -221,40 +221,53 @@ def menu_loop():
 
 
 def create_contact():
-    # Create a dictionary from user input
-    contact_data = {
-        "first_name": input_module.user_entry_first_name(),
-        "last_name": input_module.user_entry_last_name(),
-        "birthday": input_module.user_entry_birthday(),
-        "email": input_module.user_entry_email(),
-        "street_address": input_module.user_entry_street_address(),
-        "city": input_module.user_entry_city(),
-        "state": input_module.user_entry_state(),
-        "country": input_module.user_entry_country(),
-        "zip_code": input_module.user_entry_zip_code(),
-        "phone": input_module.user_entry_phone()
-    }
+    # TODO: this just creates an instance, but does not save it to a file, or generate iterative variable names.
+    # One or the other should be implemented so the contact can then be recalled later.
 
-    # Create instance from user data
-    try:
-        # ** unpacks dictionary to populate class attributes
-        new_contact = Contact(**contact_data)
+    while True:
+        first = input_module.user_entry_first_name()
+        last = input_module.user_entry_last_name()
+        email = input_module.user_entry_email()
+        phone = input_module.user_entry_phone()
+        try:
+            new_contact = Contact(
+                first_name=first, last_name=last, email=email, phone=phone)
+            break
+        except ValueError as e:
+            print(
+                f"Invalid name: {e}\n"
+                f"Please re-enter the name fields.\n\n"
+            )
 
-        # Verify instantiation and display
-        print("\n\n" + ("=" * 50))
-        print(
-            f"Contact successfully created.\n"
-            f"Contact data entered as follows:\n\n"
-            f"{new_contact}"
-        )
-        print("="*50)
+    optional_fields = [
+        ("birthday", input_module.user_entry_birthday),
+        ("street_address", input_module.user_entry_street_address),
+        ("city", input_module.user_entry_city),
+        ("state", input_module.user_entry_state),
+        ("country", input_module.user_entry_country),
+        ("zip_code", input_module.user_entry_zip_code)
+    ]
 
-    except ValueError as e:
-        print(f"Error creating contact: {e}")
-        return None
-    except Exception as e:
-        print(f"Unexpected error: {e}")
-        return None
+    for attr, input_fn in optional_fields:
+        while True:
+            try:
+                entry = input_fn()
+                setattr(new_contact, attr, entry)
+                break
+            except ValueError as e:
+                print(f"Invalid {attr}: Please try again.\n")
+                return None
+            except Exception as e:
+                print(f"Unexpected error: {e}")
+                return None
+
+    print("\n\n" + ("=" * 50))
+    print(
+        f"Contact successfully created.\n"
+        f"Contact data entered as follows:\n\n"
+        f"{new_contact}"
+    )
+    print("="*50)
 
     return new_contact
 
