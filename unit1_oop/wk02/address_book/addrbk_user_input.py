@@ -1,5 +1,7 @@
 # Methods for user input
-"""The methods used for entering user input. Input constraints implemented where applicable"""
+"""The methods used for entering user input. Input constraints implemented in setter methods in address_book.py"""
+
+"""Input first_name"""
 
 
 def user_entry_first_name():
@@ -13,6 +15,9 @@ def user_entry_first_name():
         return first_name
 
 
+"""Input last_name"""
+
+
 def user_entry_last_name():
     complete = False
     while not complete:
@@ -22,6 +27,9 @@ def user_entry_last_name():
         complete = True
         print(f"Last name set to: {last_name}\n")
         return last_name
+
+
+"""Input birthday"""
 
 
 def user_entry_birthday():
@@ -38,6 +46,9 @@ def user_entry_birthday():
         return birthday
 
 
+"""Input email"""
+
+
 def user_entry_email():
     complete = False
     while not complete:
@@ -47,6 +58,9 @@ def user_entry_email():
         complete = True
         print(f"Email set to: {email}\n")
         return email
+
+
+"""Input street_address"""
 
 
 def user_entry_street_address():
@@ -60,6 +74,9 @@ def user_entry_street_address():
         return street_address
 
 
+"""Input city"""
+
+
 def user_entry_city():
     complete = False
     while not complete:
@@ -69,6 +86,9 @@ def user_entry_city():
         complete = True
         print(f"City set to: {city}\n")
         return city
+
+
+"""Input state"""
 
 
 def user_entry_state():
@@ -82,6 +102,9 @@ def user_entry_state():
         return state
 
 
+"""Input Country"""
+
+
 def user_entry_country():
     complete = False
     while not complete:
@@ -93,6 +116,9 @@ def user_entry_country():
         return country
 
 
+"""Input zip_code"""
+
+
 def user_entry_zip_code():
     complete = False
     while not complete:
@@ -102,6 +128,9 @@ def user_entry_zip_code():
         complete = True
         print(f"Zip code set to: {zip_code}\n")
         return zip_code
+
+
+"""Input phone"""
 
 
 def user_entry_phone():

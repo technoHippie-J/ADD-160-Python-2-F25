@@ -2,10 +2,14 @@
 Address Book Application Entry Point
 """
 
-# TODO: Instead of importing AddressBook as Contact
-from address_book import AddressBook as Contact
+"""
+Import - AddressBook class as Contact
+         addrbk_user_input (input methods) as input_module
+         time (for wait)
+"""
 import addrbk_user_input as input_module
 import time
+from address_book import AddressBook as Contact
 
 #       The below is a mix of code/pseudocode (kinda)
 #
@@ -56,7 +60,10 @@ import time
 #
 
 # --- Pre-Instantiated Object Examples ---
-"""Instanced [Objects] of the AddressBook [Class]"""
+"""
+Instanced [Objects] of the AddressBook [Class]
+Required for assignment completion
+"""
 
 
 entry_01 = Contact(
@@ -113,8 +120,14 @@ entry_04 = Contact(
 
 
 # Functions
+"""Menu Loop"""
+
 
 def menu_loop():
+    """
+    While True, menu loops, allowing user to loop through options
+    active is never set False, program exits with [4] - Quit
+    """
     active = True
     while active == True:
         selection = None
@@ -128,7 +141,7 @@ def menu_loop():
         for line in menu.splitlines():
             print(line)
             time.sleep(0.1)
-
+        """Menu Selection Loop"""
         try:
             selection = int(input("Choice: "))
             if selection in (1, 2, 3, 4):
@@ -139,7 +152,7 @@ def menu_loop():
             print(f"Invalid Entry: {e}")
         except Exception as e:
             print(f"Unknown error occurred: {e}")
-
+        """Demonstration of intended function - Placeholder"""
         if selection == 1:
             not_imp = ("This selection is not implemented yet."+"\n")
             for line in not_imp.splitlines():
@@ -158,6 +171,7 @@ def menu_loop():
             if selection != None:
                 selection = None
         elif selection == 2:
+            """Initiate create_contact() Method"""
             try:
                 print(f"Starting contact creation...")
                 startup = (
@@ -174,7 +188,9 @@ def menu_loop():
             except Exception as e:
                 print(f"Encountered error: \n{e}")
         elif selection == 3:
+            """Initiate Script to Demonstrate Assignment Reqs"""
             time.sleep(0.5)
+            """Instantiate and Print Four Contact Entries"""
             try:
                 first = (
                     f"1. Create and print four contact entries:\n"
@@ -198,6 +214,7 @@ def menu_loop():
                 print(f"An error occurred: {e}")
             time.sleep(2)
             input("Hit enter to continue: ")
+            """Demonstrate Object Comparison using Magic Method __eq__"""
             try:
                 second = (
                     f"\n2. Compare two entries to see if they are the same contact:\n"
@@ -220,6 +237,7 @@ def menu_loop():
                 print(f"An error occurred: {e}")
             time.sleep(2)
             input("\n\nHit enter to continue: ")
+            """Demonstrate Object Sorting using Magic Method __lt__"""
             try:
                 third = (
                     f"\n3. Contact sorting algorithm:\n"
@@ -240,7 +258,7 @@ def menu_loop():
                 for line in third.splitlines():
                     print(line)
                     time.sleep(0.1)
-                # Sort using AddressBook.__lt__ (using _sort_key)
+                # Sort using AddressBook.__lt__ (sort(); using _sort_key)
                 Contact._instances.sort()
                 # Print results
                 for entry in Contact._instances:
@@ -255,30 +273,36 @@ def menu_loop():
             time.sleep(2)
             input("Hit enter to continue: \n")
 
-            # Create Dictionary for contact_data
+        """Exit Program"""
         if selection == 4:
             print("\nThank you, goodbye.")
             time.sleep(2)
             exit()
 
 
+"""Create Contact Loop"""
+
+
 def create_contact():
     # TODO: this just creates an instance, but does not save it to a file, or generate iterative variable names.
     # One or the other should be implemented so the contact can then be recalled later.
-
+    """Fields required to instantiate (email *or* phone)"""
     required_fields = [
         ("first_name", input_module.user_entry_first_name),
         ("last_name", input_module.user_entry_last_name),
         ("email", input_module.user_entry_email),
         ("phone", input_module.user_entry_phone)
     ]
-
+    """Collected Required Field Data"""
     while True:
+        # Create dictionary for field data
         contact_data = {}
         for attr, input_fn in required_fields:
             while True:
                 try:
+                    # assign function from input_module to info
                     info = input_fn()
+                    # assign info to attribute index
                     contact_data[attr] = info
                     break
                 except ValueError as e:
@@ -286,7 +310,7 @@ def create_contact():
                         f"Invalid entry: {e}\n"
                         f"Please re-enter the name fields.\n\n"
                     )
-
+        """Check Email and Phone; ensure at least one is populated"""
         while not (contact_data.get("email") and contact_data["email"].strip()) and not contact_data.get("phone") and contact_data["phone"].strip():
             print(
                 "Either an email or a phone number is required.\n"
@@ -295,6 +319,7 @@ def create_contact():
             try:
                 val = input_module.user_entry_email()
                 if val and val.strip():
+                    # If user entered value, assign to "email" index
                     contact_data["email"] = val
                     break
             except ValueError as e:
@@ -302,6 +327,7 @@ def create_contact():
             try:
                 val = input_module.user_entry_phone()
                 if val and val.strip():
+                    # If user entered value, assign to "phone" index
                     contact_data["phone"] = val
                     break
             except ValueError as e:
@@ -309,6 +335,7 @@ def create_contact():
             print("No valid contact method entered. Please try again...\n\n")
 
         try:
+            """Unpack contact_data dictionary into newly instantiated object"""
             new_contact = Contact(**contact_data)
             break
         except ValueError as e:
@@ -321,7 +348,7 @@ def create_contact():
                 f"Unexpected error creating contact: {e}\n"
                 "Please try again... \n\n"
             )
-
+    """Optional Object Fields"""
     optional_fields = [
         ("birthday", input_module.user_entry_birthday),
         ("street_address", input_module.user_entry_street_address),
@@ -330,7 +357,8 @@ def create_contact():
         ("country", input_module.user_entry_country),
         ("zip_code", input_module.user_entry_zip_code)
     ]
-
+    """Collected optional field data"""
+    # Iterate through optional_fields and use setattr() to populate object attributes
     for attr, input_fn in optional_fields:
         while True:
             try:
@@ -355,7 +383,7 @@ def create_contact():
         f"{new_contact}"
     )
     print("="*50)
-
+    # Return new_contact for use/storage
     return new_contact
 
     # TODO: Verify if user wants to add the contact to the addrbk_user**.json file, located in the user folder. Do some research to figure out how to do this properly. I know that .json is useful for structured data, but haven't looked into specifics yet. On the list, depending on time.
@@ -385,13 +413,13 @@ def main():
     for line in startup.splitlines():
         print(line)
         time.sleep(0.25)
-
+    # Reinforce sense of user agency, let them choose to engage with program
     go = False
     while go == False:
         input("Please press enter to continue...")
         print("\n\n\n")
         go = True
-
+    """Run Main Function"""
     menu_loop()
 
 # Run program

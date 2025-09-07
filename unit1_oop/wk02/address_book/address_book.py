@@ -102,6 +102,10 @@ I had forgotten how to implement setters and getters, and during research, I dis
 
 This also changed the way I view class attributes, as the attribute itself can call a method that protects the attribute using the logic written in the method.
 
+3. I obviously learned a lot more than this, but at a certain point, dev became a bit chaotic and I forgot to continue adding here
+
+4. My docstrings are not consistent across implementations. This assignment took me forever (my own fault, went too deep), so my goal was just to ensure docstrings were placed where I could find it appropriate for them to be, but did not make their formatting consistent
+
 """
 
 
@@ -130,6 +134,7 @@ class AddressBook:
     """[Methods] for the AddressBook [Class]"""
 
     def _sort_key(self):
+        """Sorting key helper method"""
         return (
             (self.last_name or "").casefold(),
             (self.first_name or "").casefold(),
@@ -631,7 +636,8 @@ class AddressBook:
         # Check if blank or None, then return
         if not self.email and (new_phone is None or new_phone == ""):
             '''
-                FIXME: This currently breaks if the user does not enter a phone number after not 
+                FIXME (MAYBE FIXED in __main__.py -> create_contact() logic): 
+                This currently breaks if the user does not enter a phone number after not 
                 entering an email, as no while loop to return to input has been implemented
                 This can be fixed by setting a flag in the input function, then writing a
                 While loop, recursively calling itself until the user has entered a phone number. 
@@ -775,7 +781,6 @@ class AddressBook:
 
 To-Do's:
 
-- Final "assignment" step (print out the instances)
 - Phone/Email dependency problem, potential fixes:
     - validation helper method
         def _validate_contact_info(self, email, phone):
@@ -793,14 +798,14 @@ To-Do's:
                 raise ValueError("At least one contact method required.")
 
             self.first_name = first_name # etc...
-- More magic methods
-- Docstring inconsistency cleanup and elaboration
+- More magic methods (__repr__)
+- Docstring inconsistency cleanup and elaboration (later)
 
 ----------------------------------------------------------------
 
 Later Goals:
 
-- separate UI logic from data model 
+- separate UI logic from data model (DONE)
     (user input methods pulled and placed in separate module; present now for completeness)
 - tkinter integration
 - international subclasses to handle phone/address/state-structure variance 
