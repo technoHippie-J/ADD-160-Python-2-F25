@@ -100,6 +100,8 @@ Classes:
         - herd()
 """
 
+# Base class
+
 
 class Dog:
     def __init__(self, average_weight, height_range, life_span, color):
@@ -107,6 +109,8 @@ class Dog:
         self.height_range = height_range
         self.life_span = life_span
         self.color = color
+
+# Subclass HerdingDog
 
 
 class HerdingDog(Dog):
@@ -117,6 +121,8 @@ class HerdingDog(Dog):
     def herd(self):
         return "This dog is herding sheep!"
 
+# Subclass WorkingDog
+
 
 class WorkingDog(Dog):
     def __init__(self, average_weight, height_range, life_span, color, working_type):
@@ -125,6 +131,8 @@ class WorkingDog(Dog):
 
     def work(self):
         return "This dog is working hard!"
+
+# Subclass ToyDog
 
 
 class ToyDog(Dog):
@@ -146,6 +154,8 @@ bullmastiff = WorkingDog(average_weight=115, height_range="24-27 inches",
 
 chihuahua = ToyDog(average_weight=4, height_range="5-8 inches", life_span="12-20 years",
                    color="black, white, fawn, chocolate, cream, gold", annoyance_level="Off the Charts!")
+
+# Logic
 
 
 def main():
