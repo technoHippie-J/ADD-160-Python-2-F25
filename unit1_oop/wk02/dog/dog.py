@@ -74,3 +74,79 @@ Collie: This dog is herding sheep!
 # Additional output for the other two dog classes
 
 """
+
+"""
+Classes:
+    - Dog
+        - average_weight
+        - height_range
+        - life_span
+        - color
+    - Working
+        - average_weight
+        - height_range
+        - life_span
+        - color
+        - working_ability
+        -----------------
+        - work()
+    - Herding
+        - average_weight
+        - height_range
+        - life_span
+        - color
+        - herding_ability
+        -----------------
+        - herd()
+"""
+
+
+class Dog:
+    def __init__(self, average_weight, height_range, life_span, color):
+        self.average_weight = average_weight
+        self.height_range = height_range
+        self.life_span = life_span
+        self.color = color
+
+
+class HerdingDog(Dog):
+    def __init__(self, average_weight, height_range, life_span, color, herding_type):
+        super().__init__(average_weight, height_range, life_span, color)
+        self.herding_type = herding_type
+
+    def herd(self):
+        return "This dog is herding sheep!"
+
+
+class WorkingDog(Dog):
+    def __init__(self, average_weight, height_range, life_span, color, working_type):
+        super().__init__(average_weight, height_range, life_span, color)
+        self.working_type = working_type
+
+    def work(self):
+        return "This dog is working hard!"
+
+
+class ToyDog(Dog):
+    def __init__(self, average_weight, height_range, life_span, color, annoyance_level):
+        super().__init__(average_weight, height_range, life_span, color)
+        self.annoyance_level = annoyance_level
+
+    def annoy(self):
+        return "Keep this thing away from me!"
+
+
+"""Instances"""
+
+german_shepherd = HerdingDog(average_weight=68, height_range="22-26 inches", life_span="9-13 years",
+                             color="black/red, black/tan, sable, black, gray, black/silver", herding_type="Tending")
+
+bullmastiff = WorkingDog(average_weight=115, height_range="24-27 inches",
+                         life_span="8-10 years", color="brindle, red, fawn", working_type="Guardian")
+
+chihuahua = ToyDog(average_weight=4, height_range="5-8 inches", life_span="12-20 years",
+                   color="black, white, fawn, chocolate, cream, gold", annoyance_level="Off the Charts!")
+
+print(f"German Shepherd: {german_shepherd.herd()}\n\n")
+print(f"Bullmastiff: {bullmastiff.work()}")
+print(f"Chihuahua: {chihuahua.annoy()}")
