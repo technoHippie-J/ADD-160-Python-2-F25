@@ -147,6 +147,12 @@ bullmastiff = WorkingDog(average_weight=115, height_range="24-27 inches",
 chihuahua = ToyDog(average_weight=4, height_range="5-8 inches", life_span="12-20 years",
                    color="black, white, fawn, chocolate, cream, gold", annoyance_level="Off the Charts!")
 
-print(f"German Shepherd: {german_shepherd.herd()}\n\n")
-print(f"Bullmastiff: {bullmastiff.work()}")
-print(f"Chihuahua: {chihuahua.annoy()}")
+
+def main():
+    print(f"\n\nGerman Shepherd: {german_shepherd.herd()}")
+    print(f"Bullmastiff: {bullmastiff.work()}")
+    print(f"Chihuahua: {chihuahua.annoy()}\n")
+
+
+if __name__ == "__main__":
+    main()
