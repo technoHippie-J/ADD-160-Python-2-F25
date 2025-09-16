@@ -68,28 +68,34 @@ class Car:
             return 0
         return distance / gallons
 
-
-# ------ Instances ------
-car_01 = Car("Honda", "CRV", 27)
-car_02 = Car("Toyota", "Corolla", 33)
-car_03 = Car("Toyota", "Land Cruiser FJ40", 14)
+# ------ Main Function ------
 
 
-# ------ Instance Methods ------
-print(f"\n{car_01.drive(15)}")
-print(f"{car_02.make} range on 3 gal: {car_02.veh_range(3)} miles")
+def main():
+    # ------ Instances ------
+    car_01 = Car("Honda", "CRV", 27)
+    car_02 = Car("Toyota", "Corolla", 33)
+    car_03 = Car("Toyota", "Land Cruiser FJ40", 14)
+
+    # ------ Instance Methods ------
+    print(f"\n{car_01.drive(15)}")
+    print(f"{car_02.make} range on 3 gal: {car_02.veh_range(3)} miles")
+
+    # ------ Class Methods ------
+    print(f"Default warranty: {Car.warranty}")
+    Car.set_warranty(5)
+    print(f"New warranty (class): {Car.warranty}\n")
+    print(f"[car_01] sees warranty: {car_01.warranty}")
+    print(f"[car_03] sees warranty: {car_03.warranty}")
+
+    trip_mpg = Car.calc_mpg(300, 10)
+    print(f"Trip MPG (300 miles / 10 gal): {trip_mpg}\n")
 
 
-# ------ Class Methods ------
-print(f"Default warranty: {Car.warranty}")
-Car.set_warranty(5)
-print(f"New warranty (class): {Car.warranty}\n")
-print(f"[car_01] sees warranty: {car_01.warranty}")
-print(f"[car_03] sees warranty: {car_03.warranty}")
+# ------ Program ------
 
-trip_mpg = Car.calc_mpg(300, 10)
-print(f"Trip MPG (300 miles / 10 gal): {trip_mpg}\n")
-
+if __name__ == "__main__":
+    main()
 
 """
 Instance methods are methods that are bound to the instance they are derived
