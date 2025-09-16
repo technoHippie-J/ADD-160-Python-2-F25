@@ -1,0 +1,23 @@
+╭────────────────────────  BIRD’S-EYE OBJECT MODEL  ────────────────────────╮
+│                                                                           │
+│   type  (the metaclass of (most) classes)                                 │
+│     ▲  (is a subclass of)                                                 │
+│     │                                                                     │
+│   object  (root base class)                                               │
+│                                                                           │
+│   Relationships (two kinds):                                              │
+│   • Inheritance:   Subclass ──inherits──▶ Base class (MRO linearization) │
+│   • Instantiation: Instance  ──is instance of──▶ Class                   │
+│                                                                           │
+│   Facts:                                                                  │
+│   • Every *class* (user classes, builtins like int/list) is an instance   │
+│     of `type`.                                                            │
+│   • `type` is a subclass of `object`, and `object` is an instance of      │
+│     `type`. (the famous bootstrap loop)                                   │
+│                                                                           │
+│   Example placements:                                                     │
+│   type ◀──instance── Class objects:  Car, int, list, dict, ...           │
+│   object ──base of── all normal classes                                   │
+│   Car  ◀──class of── car_01 (an instance)                                │
+│                                                                           │
+╰───────────────────────────────────────────────────────────────────────────╯

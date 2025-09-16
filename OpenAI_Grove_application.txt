@@ -1,0 +1,37 @@
+Structural Measurement Computing (SMC): a system that treats meaning as a fixed, high-dimensional manifold and represents it as pre-rendered, compressed symbolic maps (“heatmap-like” fields) in a shared space. At runtime, an input is projected into this space; the system overlays the relevant maps [core primitives, relational modulators (time, culture, stance, discourse), and a values/constraints overlay (the “conscience”)] and then measures the resultant field (the “measured circuit”) to identify the stable region/path that determines what the response must be. The LLM is used only to translate the chosen structure into language; it does not do the reasoning.
+
+Why this matters:
+
+- Efficiency / on-device: Pre-rendered structure turns inference into map traversal + measurement, enabling smart-watch-class deployment.
+- Transparency: Every decision has coordinates, overlay weights, and gates; fully auditable.
+- Stability: Same region + same overlays ⇒ same behavior (no prompt drift).
+- Alignment: The “conscience” overlay gates outputs so behavior stays logically, ethically, and contextually consistent.
+- Portability & durability: The maps persist even as models change; reasoning is model-agnostic.
+- Democratization: Moves large-model performance from the cloud to personal devices.
+
+In short: SMC replaces prompt guessing with overlay-driven, measured reasoning on a pre-existing geometry of meaning, with the LLM as translator only.
+
+
+
+
+I’m early in my journey: coursework in Python and databases, plus small class scripts. What I have built is the above specification for Structural Measurement Computing: a map-first, measurement-based reasoning model designed for on-device, auditable, aligned AI. I’m applying to turn this spec into code with mentorship.
+
+
+
+I’m still an early student, but I’ve independently designed Structural Measurement Computing from first principles. From Grove, I want help turning that concept into a working prototype and a credible path forward. Concretely: 
+
+(1) technical mentorship on the semantic-map/overlay runtime; 
+(2) evaluation design for auditability and alignment-as-enforcement; 
+(3) on-device optimization to reach watch-class hardware; 
+(4) research feedback and peer review to pressure-test the core ideas; and... 
+(5) guidance on a nontraditional path to independence: how to build something that’s societally useful without forcing it into the usual “scale-more-tokens” mold. 
+
+My strength is systems thinking and original synthesis; my weakness is experience and vertical specialization. I’m hoping to work alongside mentors to translate that systems intuition into code, and who value an independently derived design and know where someone like me fits.
+
+
+
+I’m early in coding (student) and haven’t shipped products yet. My strength is systems thinking: I independently derived Structural Measurement Computing from first principles, treating meaning as a fixed high-D manifold, using pre-rendered maps and overlay “measured circuits,” with the LLM as output-only. I didn’t arrive here through literature, I arrived here through lived experience with AI’s shortcomings and careful inference.
+
+I’m also autistic (I think in structures first and draft words later), so long prose can be hard while structural reasoning comes naturally. I’m not a developer who can build this solo quickly; I’m applying to learn fast with mentors, contribute rigorous specifications and tests, and grow into a role where I add real value.
+
+My goal is independence aligned with societal benefit: on-device, transparent, reliable AI that ordinary people can use. If the idea holds up, I want to help turn it into a real artifact. If it doesn’t, I want to learn exactly why. I’m resilient, coachable, and ready to do the unglamorous work to make the thing real.

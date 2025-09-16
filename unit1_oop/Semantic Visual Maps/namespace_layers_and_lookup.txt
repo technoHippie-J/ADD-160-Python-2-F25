@@ -1,0 +1,14 @@
+# NAMESPACE LAYERS & LOOKUP (instance attribute access)
+
+obj.attr lookup order (simplified):
+1) Data descriptor on the class (defines __get__ and __set__/__delete__) → wins
+2) obj.__dict__ (the instance namespace)
+3) Non-data descriptor or plain attribute found on class or its bases (MRO order)
+4) obj.__getattr__('attr') fallback, else AttributeError
+
+Notes:
+- Functions stored on the class are *non-data* descriptors:
+  accessing via instance binds → returns a bound method (self pre-filled).
+- @classmethod wraps a function into a descriptor that binds `cls`.
+- @staticmethod stores a function that does NOT bind anything.
+- Properties (@property) are data descriptors → override instance dict.

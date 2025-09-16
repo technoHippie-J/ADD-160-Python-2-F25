@@ -1,0 +1,22 @@
+╭────────────  DESCRIPTOR & BINDING PIPELINE (function on a class) ──────────╮
+│                                                                            │
+│  Suppose class K has `def f(self, x): ...`                                 │
+│                                                                            │
+│  1) Access via instance:    k.f                                            │
+│     - `f` is a non-data descriptor (function).                             │
+│     - Python calls: f.__get__(k, K) → returns a *bound method* where       │
+│       `self` is pre-filled as `k`. Calling `k.f(3)` passes only `3`.       │
+│                                                                            │
+│  2) Access via class:       K.f                                            │
+│     - No instance, so __get__(None, K) → returns the original function     │
+│       object; calling `K.f(k, 3)` must pass an instance explicitly.        │
+│                                                                            │
+│  3) Classmethod wrapper:    @classmethod                                   │
+│     - The wrapper’s __get__ binds `cls` (the *calling* class).             │
+│       `K.g(3)` passes `cls=K`; `SubK.g(3)` passes `cls=SubK`.              │
+│                                                                            │
+│  4) Staticmethod wrapper:   @staticmethod                                  │
+│     - __get__ returns the underlying function unchanged (no binding).      │
+│       `K.h(3)` and `k.h(3)` both pass only `3`.                            │
+│                                                                            │
+╰────────────────────────────────────────────────────────────────────────────╯

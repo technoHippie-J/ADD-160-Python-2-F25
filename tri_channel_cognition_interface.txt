@@ -1,0 +1,25 @@
+╭────────────────────────  TRI-CHANNEL COGNITION INTERFACE  ──────────────────────────╮
+│ INPUTS → code • text • graphs • tasks                                               │
+│                                                                                     │
+│   [A] VISUAL MAP (2D Blocks)    ⇄    [B] SEMANTIC LAYER (symbols/relations)        │
+│           │  ▲                                  │   ▲                               │
+│           ▼  │                                  ▼   │                               │
+│   [C] PSEUDO-SOMATIC GEOMETRIES (compressed felt-shapes / pattern qualia)           │
+│                                                                                     │
+│ DYNAMICS                                                                            │
+│ ─────────                                                                           │
+│ • A→B: shape-to-meaning decoding (layout ⇒ roles, edges ⇒ causality/MRO)           |
+│ • B→A: meaning-to-shape encoding (ontologies ⇒ boxes/flows/tiers)                  │
+│ • B→C: semantic compression (abstractions ⇒ “felt” geometric tokens)               │
+│ • C→B: rapid recall/intuition (felt token ⇒ semantic unpack)                       │
+│ • A↔C: direct resonance (geometry on canvas ↔ geometry in felt-sense)               │
+│                                                                                     │
+│ OPERATORS (how we work the map)                                                     │
+│ ─────────────────────────────────────────────────────────────────────────────────── │
+│ • Align: keep A,B,C isomorphic enough for instant flip-through                      │
+│ • Compress: reduce B into C without losing retrieval fidelity                       │
+│ • Expand: rehydrate C back into B, render as A                                      │
+│ • Disambiguate: when B conflicts, let A’s topology and C’s qualia arbitrate         │
+│                                                                                     │
+│ OUTPUTS → decision, code skeleton, refactor path, or just a stable mental handle    │
+╰─────────────────────────────────────────────────────────────────────────────────────╯

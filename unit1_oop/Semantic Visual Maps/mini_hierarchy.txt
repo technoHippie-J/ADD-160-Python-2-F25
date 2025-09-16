@@ -1,0 +1,38 @@
+# MINI HIERARCHY (who can see what, and how)
+
+class Animal:                     # base class (superclass/ancestor)
+    species = "generic"           # class attribute (shared default)
+
+    def speak(self):              # instance method → needs an instance
+        return f"{self.species} noise"
+
+    @classmethod
+    def kind(cls):                # class method → gets `cls` (polymorphic)
+        return f"kind={cls.__name__}, species={cls.species}"
+
+    @staticmethod
+    def util(a, b):               # static method → pure utility
+        return a + b
+
+    @property                     # data descriptor (computed attribute)
+    def tag(self):
+        return f"[{self.species}]"
+
+class Dog(Animal):                # subclass (child)
+    species = "canine"
+
+    def speak(self):              # overrides Animal.speak
+        return "woof"
+
+    @staticmethod                 # overriding with a different flavor is allowed
+    def kind():                   # (here, shadowing the classmethod on parent)
+        return "shadowed kind (static)"
+
+# Access patterns
+d = Dog()
+d.speak()        # "woof" (instance method on Dog)
+d.tag            # "[canine]" (property via data descriptor)
+Dog.kind()       # "shadowed kind (static)"  ← Dog's override wins in MRO
+Animal.kind()    # "kind=Animal, species=generic"  ← parent still callable
+Dog.util(2, 3)   # 5 (staticmethod usable via class or instance)
+d.util(2, 3)     # 5 (also works; no binding)

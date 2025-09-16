@@ -1,0 +1,17 @@
+# INHERITANCE & MRO (how Python decides *which* attr wins)
+
+class A(object):
+    ...
+
+class B(A):
+    ...
+
+class C(B):
+    ...
+
+# C's MRO is typically:  [C, B, A, object]
+# Attribute resolution walks that linear order.
+# super() in a method defined on C means: "next in the MRO after C".
+
+Flow for C().attr:
+C → B → A → object  (first match wins, respecting descriptor rules above)

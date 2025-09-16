@@ -1,0 +1,6 @@
+# TERMINOLOGY SNAPSHOT
+
+- base class / parent class: the immediate class you inherit from (e.g., Animal is Dog’s base).
+- superclass: any ancestor up the chain (could include multiple in multiple inheritance).
+- subclass / child class: the deriving class (e.g., Dog).
+- metaclass: the “class of a class” (usually `type`); controls how classes are created.

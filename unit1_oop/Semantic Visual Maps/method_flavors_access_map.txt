@@ -1,0 +1,17 @@
+╭─────────────────────────  METHOD FLAVORS (ACCESS MAP)  ─────────────────────╮
+│ Name            | Declared as           | Implicit first arg | Typical call │
+│─────────────────┼───────────────────────┼────────────────────┼──────────────│
+│ Instance method | def fn(self, ...)     | self (instance)    | obj.fn(...)  │
+│ Class method    | @classmethod def fn…  | cls  (class)       | Car.fn(...); │
+│                 |                       |                    | also obj.fn  │
+│ Static method   | @staticmethod def fn… | (none)             | Car.fn(...); │
+│                 |                       |                    | obj.fn(...)  │
+│ Property        | @property def p(self) | self (via __get__) | obj.p        │
+│                 | (data descriptor)     |                    |              │ 
+│─────────────────────────────────────────────────────────────────────────────│
+│ Conversions/Overrides:                                                      │
+│ - Subclasses can override a method with a different flavor (e.g.,           │
+│   replace an instance method with a staticmethod). It “shadows” parent’s    │
+│   attribute in the MRO. Works, but can be surprising-keep kinds consistent  │
+│   unless you *mean* to change semantics.                                    │
+╰─────────────────────────────────────────────────────────────────────────────╯
