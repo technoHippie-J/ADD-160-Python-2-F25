@@ -167,9 +167,6 @@ def found_fun_03(req_index):
     return _fib(req_index)
 
 
-# 4b) Fib Helper Function (counts digits)
-
-
 # _______ The Program _______
 # ------ Main Function ------
 
