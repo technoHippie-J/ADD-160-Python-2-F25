@@ -1,0 +1,13 @@
+{
+    "Brand": "Generic",
+    "Model": "Smart Thermostat v1.0",
+    "Category": "Thermostats",
+    "Temperature": 72,
+    "Humidity": 45,
+    "TargetTemp": 68,
+    "Mode": "Auto",
+    "Fan": "Auto",
+    "TempUnit": "Fahrenheit",
+    "Protocols": ["WiFi"],
+    "Status": "active"
+}

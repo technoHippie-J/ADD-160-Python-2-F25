@@ -1,0 +1,8 @@
+{
+    "Brand": "Unknown",
+    "Model": "Generic Thermostat",
+    "Category": "Thermostats",
+    "Temperature": 70,
+    "Humidity": 50,
+    "Status": "unknown"
+}

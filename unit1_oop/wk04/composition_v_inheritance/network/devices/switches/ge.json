@@ -1,0 +1,10 @@
+{
+    "Brand": "Generic",
+    "Model": "Smart Switch v1.0",
+    "Category": "Switches",
+    "Type": "Toggle",
+    "Protocols": ["WiFi"],
+    "MaxLoad": "15A",
+    "Voltage": "120V",
+    "Status": "active"
+}

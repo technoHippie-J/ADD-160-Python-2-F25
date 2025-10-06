@@ -1,0 +1,13 @@
+{
+    "Brand": "Generic",
+    "Model": "Smart Bulb v1.0",
+    "Category": "Lights",
+    "Dimmer": true,
+    "ColorTemp": 3000,
+    "RGB": true,
+    "MaxBrightness": 100,
+    "MinBrightness": 1,
+    "Protocols": ["WiFi", "Zigbee"],
+    "PowerConsumption": "10W",
+    "Status": "active"
+}
