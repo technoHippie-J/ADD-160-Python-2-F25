@@ -1,5 +1,5 @@
 # Smart Home Device Management System
-- This file written by Claude Sonnet 4.5
+- This README.md file written by Claude Sonnet 4.5
 
 A modular IoT device management framework demonstrating **inheritance** and **composition** design patterns in Python. Built as a walking skeleton that can be extended for real hardware integration.
 
